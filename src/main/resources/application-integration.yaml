@@ -1,0 +1,20 @@
+spring:
+  config:
+    activate:
+      on-profile: integration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:trails-db;MODE=MySQL;DB_CLOSE_DELAY=-1;IGNORECASE=TRUE;
+    username: sa
+    password: admin
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      data-locations: classpath:db/integration/populateDataIntegration.sql
